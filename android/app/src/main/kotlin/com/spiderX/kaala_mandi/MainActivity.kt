@@ -1,4 +1,4 @@
-package com.example.kaala_mandi
+package com.spiderX.kaala_mandi
 
 import io.flutter.embedding.android.FlutterActivity
 

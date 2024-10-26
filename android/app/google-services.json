@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "182841189979",
+    "project_id": "kaala-mandi",
+    "storage_bucket": "kaala-mandi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:182841189979:android:74f7d84ca6b3ac6e55c17e",
+        "android_client_info": {
+          "package_name": "com.spiderX.kaala_mandi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwo2ZSeK9GOv2o8igx7p3UU2ncb7-SWTY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

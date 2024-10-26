@@ -1,11 +1,22 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kaala_mandi/res/getx_localization/languages.dart';
 import 'package:kaala_mandi/views/splash_screen/splash_screen.dart';
 
-import 'data/routes_service/routes.dart';
+import 'firebase_options.dart';
+import 'services/notification_service/FCMService.dart';
+import 'services/routes_service/routes.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  FCMService fcmService = FCMService();
+  await fcmService.initialize();
   runApp(const MyApp());
 }
 
