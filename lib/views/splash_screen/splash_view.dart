@@ -6,14 +6,14 @@ import 'package:kaala_mandi/view_models/splash_vm/splash_vm.dart';
 
 import '../../data/app_data.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+class SplashView extends StatefulWidget {
+  const SplashView({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<SplashView> createState() => _SplashViewState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashViewState extends State<SplashView> {
   final viewModel = Get.put(SplashViewModel());
 
   @override

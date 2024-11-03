@@ -12,7 +12,20 @@
           "package_name": "com.spiderX.kaala_mandi"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "182841189979-la94n0kni2ihillcsv5m8cockpu9lvej.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.spiderX.kaala_mandi",
+            "certificate_hash": "30d2f7bccf9c174822a4616f41c777973e6c742d"
+          }
+        },
+        {
+          "client_id": "182841189979-8o220p6ik2mfra5jvakgincg64ur385g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBwo2ZSeK9GOv2o8igx7p3UU2ncb7-SWTY"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "182841189979-8o220p6ik2mfra5jvakgincg64ur385g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

@@ -3,14 +3,14 @@ import 'package:get/get.dart';
 import 'package:kaala_mandi/data/app_data.dart';
 import 'package:kaala_mandi/view_models/onBoarding_vm/onBoarding_vm.dart';
 
-class OnBoardingScreen extends StatefulWidget {
-  const OnBoardingScreen({super.key});
+class OnBoardingView extends StatefulWidget {
+  const OnBoardingView({super.key});
 
   @override
-  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
+  State<OnBoardingView> createState() => _OnBoardingViewState();
 }
 
-class _OnBoardingScreenState extends State<OnBoardingScreen> {
+class _OnBoardingViewState extends State<OnBoardingView> {
   final viewModel = Get.put(OnBoardingViewModel());
 
   @override

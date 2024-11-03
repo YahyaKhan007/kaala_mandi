@@ -12,7 +12,7 @@ class SplashViewModel extends GetxController {
     splashLoading.value = true;
 
     if (splashLoading.value == true) {
-      Get.toNamed(RouteName.onBoardingScreen);
+      Get.toNamed(AppPages.login);
     }
   }
 }

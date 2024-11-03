@@ -33,6 +33,7 @@ migrate_working_dir/
 /build/
 # If you want to ignore the build folders in the android directory specifically
 /android/app/build/
+/android/key.properties
 ./lib/data/fcm_server_key
 
 # Symbolication related
