@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kaala_mandi/view_models/home_screen_viewModel/home_screen_vm.dart';
+
+import '../home_screen_vm.dart';
 
 class NavBarItemWidget extends StatelessWidget {
   final BoxConstraints constraints;

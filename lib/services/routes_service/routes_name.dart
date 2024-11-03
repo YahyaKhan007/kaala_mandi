@@ -6,4 +6,6 @@ class AppPages {
   static const forgotPassword = '/forgotPassword';
   static const otpScreen = '/otpScreen';
   static const homeScreen = '/homeScreen';
+  static const categoryItem = '/categoryItem';
+  static const itemDetails = '/itemDetails';
 }
