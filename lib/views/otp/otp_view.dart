@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:kaala_mandi/view_models/otp_vm/otp_vm.dart';
 import 'package:otp_pin_field/otp_pin_field.dart';
 
+import '../../res/app_colors.dart';
 import 'widgets/appbar.dart';
 
 class OTPView extends StatefulWidget {
@@ -25,6 +26,7 @@ class _OTPViewState extends State<OTPView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.lightBackgroundColor,
       appBar: PreferredSize(
         child: OtpAppBar(),
         preferredSize: Size.fromHeight(

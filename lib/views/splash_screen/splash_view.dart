@@ -5,6 +5,7 @@ import 'package:kaala_mandi/res/loading_widgets/loading_three_dots.dart';
 import 'package:kaala_mandi/view_models/splash_vm/splash_vm.dart';
 
 import '../../data/app_data.dart';
+import '../../res/app_colors.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -25,39 +26,48 @@ class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Padding(
+      backgroundColor: AppColors.lightBackgroundColor,
+      body: SafeArea(child: LayoutBuilder(builder: (contetxt, constraints) {
+        return Padding(
           padding: const EdgeInsets.all(16),
-          child: Column(
-            children: [
-              const Spacer(flex: 1),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.8,
-                child: AspectRatio(
-                  aspectRatio: 1,
-                  child: SvgPicture.string(
-                    AppData.paymentProcessIllistration,
-                    fit: BoxFit.scaleDown,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                // const Spacer(flex: 1),
+                SizedBox(
+                  height: constraints.maxHeight * 0.1,
+                ),
+                SizedBox(
+                  width: constraints.maxWidth * 0.8,
+                  height: constraints.maxHeight * 0.45,
+                  child: AspectRatio(
+                    aspectRatio: 1,
+                    child: SvgPicture.string(
+                      AppData.paymentProcessIllistration,
+                      fit: BoxFit.scaleDown,
+                    ),
                   ),
                 ),
-              ),
-              ErrorInfo(
-                title: "Hello and Welcome",
-                description:
-                    "We're setting things up for you. This will only take a moment.",
-                button: Transform.scale(
-                  scale: 1,
-                  child:
-                      AppLoading.loadingThreeDot(color: Colors.black, size: 40),
+                ErrorInfo(
+                  title: "Hello and Welcome",
+                  description:
+                      "We're setting things up for you. This will only take a moment.",
+                  button: Transform.scale(
+                    scale: 1,
+                    child: AppLoading.loadingThreeDot(
+                        color: Colors.black,
+                        size: constraints.maxHeight * 0.05),
+                  ),
+                  press: () {},
                 ),
-                press: () {},
-              ),
-              const Spacer(flex: 1),
-            ],
+                SizedBox(
+                  height: constraints.maxHeight * 0.1,
+                ),
+              ],
+            ),
           ),
-        ),
-      ),
+        );
+      })),
     );
   }
 }

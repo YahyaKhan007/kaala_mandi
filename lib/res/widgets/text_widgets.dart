@@ -38,6 +38,25 @@ class HeadingMediumText extends StatelessWidget {
   }
 }
 
+class HeadingLargeText extends StatelessWidget {
+  final String text;
+  final Color? textColor;
+  final FontWeight? fontWeight;
+  const HeadingLargeText(
+      {super.key, required this.text, this.textColor, this.fontWeight});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+          color: textColor ?? Colors.grey.shade800,
+          fontSize: 32,
+          fontWeight: fontWeight ?? FontWeight.w700),
+    );
+  }
+}
+
 class BodySmallText extends StatelessWidget {
   final String text;
   final Color? textColor;
@@ -86,6 +105,25 @@ class BodyMediumText extends StatelessWidget {
     return Text(
       text,
       style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+          color: textColor ?? Colors.grey.shade800,
+          fontWeight: fontWeight ?? FontWeight.w700),
+    );
+  }
+}
+
+class BodyLargeText extends StatelessWidget {
+  final String text;
+  final Color? textColor;
+  final FontWeight? fontWeight;
+  const BodyLargeText(
+      {super.key, required this.text, this.textColor, this.fontWeight});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+          fontSize: 16,
           color: textColor ?? Colors.grey.shade800,
           fontWeight: fontWeight ?? FontWeight.w700),
     );

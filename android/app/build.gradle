@@ -33,8 +33,19 @@ android {
         minSdk = 23
         targetSdk = flutter.targetSdkVersion
 //        compileSdk = 33
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
+//        versionCode flutterVersionCode.toInteger()
+//        versionName flutterVersionName
+        // Read version info from local.properties
+        def properties = new Properties()
+        def localPropertiesFile = rootProject.file("local.properties")
+        if (localPropertiesFile.exists()) {
+            properties.load(localPropertiesFile.newDataInputStream())
+            versionCode = (properties.getProperty("flutter.versionCode") ?: "1").toInteger()
+            versionName = properties.getProperty("flutter.versionName") ?: "1.0.0"
+        } else {
+            versionCode = 1
+            versionName = "1.0.0"
+        }
         multiDexEnabled true
     }
 

@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:kaala_mandi/data/app_data.dart';
 import 'package:kaala_mandi/view_models/onBoarding_vm/onBoarding_vm.dart';
 
+import '../../res/app_colors.dart';
+
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});
 
@@ -16,6 +18,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.lightBackgroundColor,
       body: SafeArea(
         child: SizedBox(
           width: double.infinity,

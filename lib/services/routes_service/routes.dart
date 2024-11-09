@@ -21,7 +21,7 @@ class AppRoutes {
               final args = Get.arguments;
               return CategoryItemView(
                 category: args['category'],
-                image: args['image'],
+                categoryIndex: args['categoryIndex'],
               );
             }),
         GetPage(

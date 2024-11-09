@@ -29,6 +29,7 @@ class _ChatViewState extends State<ChatView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.lightBackgroundColor,
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: AppColors.lightPrimaryColor,
@@ -78,10 +79,10 @@ class _ChatViewState extends State<ChatView> {
                             ),
                           ),
                         ),
-                        title: BodyMediumText(
+                        title: BodyLargeText(
                           text: viewModel.dummyName[index],
                         ),
-                        subtitle: BodyTinyText(
+                        subtitle: BodyMediumText(
                             text: 'Hello Sir, Do you wanna buy this ...'),
                         trailing: Transform.rotate(
                             angle: 90 * pi / 180,

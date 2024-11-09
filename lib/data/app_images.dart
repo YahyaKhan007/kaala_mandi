@@ -15,4 +15,5 @@ class AppImages {
   static const sheepIcon = 'assets/icons/sheepIcon.png';
   static const goatIcon = 'assets/icons/goatIcon.png';
   static const camelIcon = 'assets/icons/camelIcon.png';
+  static const whatsapp = 'assets/icons/whatsapp.png';
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kaala_mandi/views/login/widgets/terms_conditions_widget.dart';
 
+import '../../res/app_colors.dart';
 import '../../view_models/login_vm/login_vm.dart';
 import 'widgets/continue_with_buttons.dart';
 
@@ -29,6 +30,7 @@ class _LoginViewState extends State<LoginView> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       // resizeToAvoidBottomInset: false,
+      backgroundColor: AppColors.lightBackgroundColor,
       body: SafeArea(
         child: LayoutBuilder(
           builder: (context, constraints) => SingleChildScrollView(
