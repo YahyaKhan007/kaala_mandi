@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:kaala_mandi/res/app_colors.dart';
 
 class ContinueWithButtonWidget extends StatelessWidget {
   final BoxConstraints constraints;
@@ -32,11 +33,11 @@ class ContinueWithButtonWidget extends StatelessWidget {
             imagePath != null
                 ? SvgPicture.asset(
                     imagePath!,
-                    height: 32,
+                    height: 24,
                   )
                 : Icon(
-                    Icons.email,
-                    size: 32,
+                    label.contains("Phone") ? Icons.phone : Icons.email,
+                    size: 24,
                     color: Colors.grey.shade600,
                   ),
             Expanded(
@@ -44,7 +45,9 @@ class ContinueWithButtonWidget extends StatelessWidget {
                 child: Text(
                   label,
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: Colors.grey.shade600, fontWeight: FontWeight.w700),
+                      fontSize: 14,
+                      color: Colors.grey.shade600,
+                      fontWeight: FontWeight.w600),
                 ),
               ),
             ),
@@ -74,13 +77,15 @@ class ContinueWithPhone extends StatelessWidget {
         width: constraints.maxWidth,
         margin: EdgeInsets.symmetric(horizontal: 16),
         decoration: BoxDecoration(
-            color: Colors.grey.withOpacity(0.2),
+            color: AppColors.lightPrimaryColor,
             borderRadius: BorderRadius.circular(8)),
         child: Center(
           child: Text(
             "Continue with Mobile Number",
-            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                color: Colors.grey.shade600, fontWeight: FontWeight.w500),
+            style: Theme.of(context)
+                .textTheme
+                .bodyMedium!
+                .copyWith(color: Colors.white, fontWeight: FontWeight.w500),
           ),
         ),
       ),

@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kaala_mandi/views/login/widgets/terms_conditions_widget.dart';
+import 'package:kaala_mandi/views/auth_views/phone_login/widgets/terms_conditions_widget.dart';
 
-import '../../res/app_colors.dart';
-import '../../view_models/login_vm/login_vm.dart';
+import '../../../res/app_colors.dart';
+import '../../../view_models/login_vm/login_vm.dart';
 import 'widgets/continue_with_buttons.dart';
 
-class LoginView extends StatefulWidget {
-  LoginView({super.key});
+class phoneLoginView extends StatefulWidget {
+  phoneLoginView({super.key});
 
   @override
-  State<LoginView> createState() => _LoginViewState();
+  State<phoneLoginView> createState() => _LoginViewState();
 }
 
-class _LoginViewState extends State<LoginView> {
+class _LoginViewState extends State<phoneLoginView> {
   final _formKey = GlobalKey<FormState>();
 
   late LoginViewModel viewModel;
@@ -146,9 +146,11 @@ class _LoginViewState extends State<LoginView> {
                 ),
 
                 ContinueWithButtonWidget(
-                  onTap: () {},
+                  onTap: () {
+                    viewModel.gotoEmailLogin();
+                  },
                   constraints: constraints,
-                  label: "Continue with Google",
+                  label: "Continue with Email",
                 ),
 
                 SizedBox(
@@ -157,7 +159,7 @@ class _LoginViewState extends State<LoginView> {
                 ContinueWithButtonWidget(
                   onTap: () {},
                   constraints: constraints,
-                  label: "Continue with Email",
+                  label: "Continue with Google",
                   imagePath: "assets/icons/google.svg",
                 ),
 

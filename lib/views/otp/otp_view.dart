@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kaala_mandi/view_models/otp_vm/otp_vm.dart';
-import 'package:otp_pin_field/otp_pin_field.dart';
+import 'package:kaala_mandi/views/otp/widgets/pinput.dart';
 
 import '../../res/app_colors.dart';
 import 'widgets/appbar.dart';
@@ -22,6 +22,10 @@ class _OTPViewState extends State<OTPView> {
     viewModel = Get.put(OTpViewModel());
     super.initState();
   }
+
+  final focusedBorderColor = Color.fromRGBO(23, 171, 144, 1);
+  final fillColor = Color.fromRGBO(243, 246, 249, 0);
+  final borderColor = Color.fromRGBO(23, 171, 144, 0.4);
 
   @override
   Widget build(BuildContext context) {
@@ -93,29 +97,34 @@ class _OTPViewState extends State<OTPView> {
                         ],
                       ),
                       SizedBox(
-                        height: constraints.maxHeight * 0.06,
+                        height: constraints.maxHeight * 0.1,
                       ),
 
-                      OtpPinField(
-                        otpPinFieldDecoration:
-                            OtpPinFieldDecoration.roundedPinBoxDecoration,
-                        onSubmit: (value) {
-                          viewModel.onSubmittedField(int.parse(value));
-                        },
-                        onChange: (value) {},
-                        autoFillEnable: true,
-                        autoFocus: true,
-                        highlightBorder: true,
-                        otpPinFieldStyle: OtpPinFieldStyle(
-                          activeFieldBorderColor: Colors.black,
-                          activeFieldBorderGradient: LinearGradient(
-                              colors: [Colors.black, Colors.redAccent]),
-                          filledFieldBorderGradient: LinearGradient(
-                              colors: [Colors.green, Colors.tealAccent]),
-                          defaultFieldBorderGradient: LinearGradient(
-                              colors: [Colors.orange, Colors.brown]),
-                        ),
-                      )
+                      Center(
+                          child: PinputExample(
+                        viewModel: viewModel,
+                      ))
+
+                      // OtpPinField(
+                      //   otpPinFieldDecoration:
+                      //       OtpPinFieldDecoration.roundedPinBoxDecoration,
+                      //   onSubmit: (value) {
+                      //     viewModel.onSubmittedField(int.parse(value));
+                      //   },
+                      //   onChange: (value) {},
+                      //   autoFillEnable: true,
+                      //   autoFocus: true,
+                      //   highlightBorder: true,
+                      //   otpPinFieldStyle: OtpPinFieldStyle(
+                      //     activeFieldBorderColor: Colors.black,
+                      //     activeFieldBorderGradient: LinearGradient(
+                      //         colors: [Colors.black, Colors.redAccent]),
+                      //     filledFieldBorderGradient: LinearGradient(
+                      //         colors: [Colors.green, Colors.tealAccent]),
+                      //     defaultFieldBorderGradient: LinearGradient(
+                      //         colors: [Colors.orange, Colors.brown]),
+                      //   ),
+                      // )
                     ],
                   ),
                 ),

@@ -1,10 +1,11 @@
 {
-    "flutter": "3.19.1",
-    "flavors": {
-      "development": "beta",
-      "production": "3.19.1"
-    },
-    "updateVscodeSettings": true,
-    "updateGitIgnore": true,
-    "runPubGetOnSdkChanges": true
-  }
+  "flutter": "3.19.1",
+  "flavors": {
+    "development": "beta",
+    "production": "3.19.1"
+  },
+  "updateVscodeSettings": true,
+  "updateGitIgnore": true,
+  "runPubGetOnSdkChanges": true,
+  "dart.flutterSdkPath": ".fvm/versions/3.24.0"
+}

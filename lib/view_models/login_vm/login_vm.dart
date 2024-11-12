@@ -20,6 +20,15 @@ class LoginViewModel extends GetxController {
     phoneSignIn.value = false;
   }
 
+  gotoEmailLogin() {
+    Get.toNamed(
+      AppPages.emailLogin,
+      // arguments: {'phoneNumber': phoneNumberController.text}
+    );
+  }
+
+  gotoTermsAndPolicies() {}
+
   // continue with phone number
   Future<void> continueWithPhoneNumber() async {
     Get.toNamed(AppPages.otpScreen,
