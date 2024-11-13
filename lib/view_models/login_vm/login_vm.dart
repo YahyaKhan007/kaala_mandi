@@ -22,7 +22,7 @@ class LoginViewModel extends GetxController {
 
   gotoEmailLogin() {
     Get.toNamed(
-      AppPages.emailLogin,
+      AppPages.emailLoginView,
       // arguments: {'phoneNumber': phoneNumberController.text}
     );
   }
@@ -31,7 +31,7 @@ class LoginViewModel extends GetxController {
 
   // continue with phone number
   Future<void> continueWithPhoneNumber() async {
-    Get.toNamed(AppPages.otpScreen,
+    Get.toNamed(AppPages.otpScreenView,
         arguments: {'phoneNumber': phoneNumberController.text});
   }
 

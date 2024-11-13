@@ -11,7 +11,7 @@ class ForgotPasswordViewModel extends GetxController {
 
   goBackToLogin() {
     Get.toNamed(
-      AppPages.emailLogin,
+      AppPages.emailLoginView,
       // arguments: {'phoneNumber': phoneNumberController.text}
     );
   }

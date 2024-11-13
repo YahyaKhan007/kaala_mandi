@@ -50,6 +50,9 @@ class _ChatViewState extends State<ChatView> {
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 16),
                       child: ListTile(
+                        onTap: () {
+                          viewModel.openMessages();
+                        },
                         contentPadding: EdgeInsets.zero,
                         leading: CircleAvatar(
                           radius: 28,
@@ -79,10 +82,10 @@ class _ChatViewState extends State<ChatView> {
                             ),
                           ),
                         ),
-                        title: BodyLargeText(
+                        title: BodyMediumText(
                           text: viewModel.dummyName[index],
                         ),
-                        subtitle: BodyMediumText(
+                        subtitle: BodyTinyText(
                             text: 'Hello Sir, Do you wanna buy this ...'),
                         trailing: Transform.rotate(
                             angle: 90 * pi / 180,

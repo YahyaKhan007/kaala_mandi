@@ -12,7 +12,7 @@ class EmailSignupViewModel extends GetxController {
 
   gotoLoginWithEmail() {
     Get.toNamed(
-      AppPages.emailLogin,
+      AppPages.emailLoginView,
       // arguments: {'phoneNumber': phoneNumberController.text}
     );
   }

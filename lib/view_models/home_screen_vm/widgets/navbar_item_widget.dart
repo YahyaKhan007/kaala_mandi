@@ -43,10 +43,11 @@ class NavBarItemWidget extends StatelessWidget {
                     child: Text(
                       label,
                       style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                          color: viewModel.currentScreenIndex == index
+                          color: viewModel.currentScreenIndex.value == index
                               ? Colors.white
                               : Colors.black,
-                          fontWeight: FontWeight.w500),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12),
                     ),
                   )
                 ],

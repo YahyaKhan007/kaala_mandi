@@ -11,21 +11,21 @@ class EmailLoginViewModel extends GetxController {
 
   gotoPhoneLogin() {
     Get.toNamed(
-      AppPages.phoneLogin,
+      AppPages.phoneLoginView,
       // arguments: {'phoneNumber': phoneNumberController.text}
     );
   }
 
   gotoForgotPassword() {
     Get.toNamed(
-      AppPages.forgotPassword,
+      AppPages.forgotPasswordView,
       // arguments: {'phoneNumber': phoneNumberController.text}
     );
   }
 
   gotoSignupWithEmail() {
     Get.toNamed(
-      AppPages.emailSignup,
+      AppPages.emailSignupView,
       // arguments: {'phoneNumber': phoneNumberController.text}
     );
   }

@@ -97,11 +97,11 @@ class _OfferDetailViewState extends State<OfferDetailView> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            HeadingSmallText(
+            BodyMediumText(
               text: label,
               textColor: AppColors.lightIconGreyColor,
             ),
-            HeadingSmallText(
+            BodySmallText(
               text: data,
               textColor: AppColors.lightIconGreyColor,
             ),

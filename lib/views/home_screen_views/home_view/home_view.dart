@@ -27,6 +27,14 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.lightBackgroundColor,
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: AppColors.lightPrimaryColor,
+        title: HeadingMediumText(
+          text: "Browse Breeds",
+          textColor: Colors.white,
+        ),
+      ),
       body: SafeArea(
         child: LayoutBuilder(
             builder: (context, constraints) => SingleChildScrollView(
@@ -36,13 +44,6 @@ class _HomeViewState extends State<HomeView> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(
-                        height: constraints.maxHeight * 0.04,
-                      ),
-                      HeadingLargeText(
-                        text: "Browse Breeds",
-                        textColor: AppColors.lightPrimaryColor,
-                      ),
                       SizedBox(
                         height: constraints.maxHeight * 0.04,
                       ),

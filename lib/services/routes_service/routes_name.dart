@@ -1,12 +1,13 @@
 class AppPages {
-  static const splashScreen = '/splashScreen';
-  static const onBoardingScreen = '/onBoardingScreen';
-  static const phoneLogin = '/phoneLogin';
-  static const emailLogin = '/emailLogin';
-  static const emailSignup = '/emailSignup';
-  static const forgotPassword = '/forgotPassword';
-  static const otpScreen = '/otpScreen';
-  static const homeScreen = '/homeScreen';
-  static const categoryItem = '/categoryItem';
-  static const itemDetails = '/itemDetails';
+  static const splashScreenView = '/splashScreenView';
+  static const onBoardingScreenView = '/onBoardingScreenView';
+  static const phoneLoginView = '/phoneLoginView';
+  static const emailLoginView = '/emailLoginView';
+  static const emailSignupView = '/emailSignupView';
+  static const forgotPasswordView = '/forgotPasswordView';
+  static const otpScreenView = '/otpScreenView';
+  static const homeScreenView = '/homeScreenView';
+  static const categoryItemView = '/categoryItemView';
+  static const offerDetailsView = '/offerDetailsView';
+  static const messageScreenView = '/messageScreenView';
 }

@@ -11,7 +11,7 @@ class ContactOfferCreator extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return LayoutBuilder(builder: (context, constraints) {
-      return Container(
+      return SizedBox(
         height: size.height * 0.2,
         child: SingleChildScrollView(
           child: Column(
@@ -35,7 +35,7 @@ class ContactOfferCreator extends StatelessWidget {
                     SizedBox(
                       width: 8,
                     ),
-                    HeadingSmallText(
+                    BodyMediumText(
                       text: 'Call Seller',
                       textColor: Colors.white,
                     ),
@@ -71,7 +71,7 @@ class ContactOfferCreator extends StatelessWidget {
                           SizedBox(
                             width: 8,
                           ),
-                          BodyLargeText(text: "Chat")
+                          BodyMediumText(text: "Chat")
                         ],
                       ),
                     ),
@@ -99,7 +99,7 @@ class ContactOfferCreator extends StatelessWidget {
                             SizedBox(
                               width: 8,
                             ),
-                            BodyLargeText(text: "Whatsapp")
+                            BodyMediumText(text: "Whatsapp")
                           ],
                         ),
                       ),

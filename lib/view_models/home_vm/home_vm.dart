@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:kaala_mandi/data/app_images.dart';
-import 'package:kaala_mandi/views/home_screen_views/home_view/sub_pages/offer_detail_view/offer_detail_view.dart';
+import 'package:kaala_mandi/services/routes_service/routes_name.dart';
 
 class HomeViewModel extends GetxController {
   List<String> categoryNames = [
@@ -23,8 +23,6 @@ class HomeViewModel extends GetxController {
   ];
 
   gotoOfferDetails(String path) {
-    Get.to(() => OfferDetailView(
-          imagePath: path,
-        ));
+    Get.toNamed(AppPages.offerDetailsView, arguments: {"imagePath": path});
   }
 }

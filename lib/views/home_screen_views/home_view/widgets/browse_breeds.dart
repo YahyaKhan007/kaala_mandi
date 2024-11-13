@@ -31,7 +31,7 @@ class BrowseBreeds extends StatelessWidget {
           itemBuilder: (context, index) {
             return InkWell(
               onTap: () {
-                Get.toNamed(AppPages.categoryItem, arguments: {
+                Get.toNamed(AppPages.categoryItemView, arguments: {
                   'category': viewModel.categoryNames[index],
                   'categoryIndex': index,
                 });

@@ -23,7 +23,7 @@ class MoreView extends StatelessWidget {
                   ),
                   subtitle: Row(
                     children: [
-                      HeadingSmallText(
+                      BodyLargeText(
                         text: "View Profile",
                         textColor: Colors.white,
                       ),
@@ -55,13 +55,13 @@ class MoreView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               BodyMediumText(text: "Need Help? "),
-              BodyLargeText(
+              BodyMediumText(
                 text: "Contact Us",
                 textColor: AppColors.lightPrimaryColor,
               ),
             ],
           ),
-          BodyMediumText(text: 'version 1.0.0'),
+          BodySmallText(text: 'version 1.0.0'),
           SizedBox(
             height: 40,
           )
@@ -82,7 +82,7 @@ class MoreView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  HeadingMediumText(text: "Saved Ads"),
+                  BodyLargeText(text: "Saved Ads"),
                   SizedBox(
                     height: 2,
                   ),
