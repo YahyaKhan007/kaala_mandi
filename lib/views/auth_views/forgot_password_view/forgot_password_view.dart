@@ -45,6 +45,7 @@ class _LoginViewState extends State<ForgotPasswordView> {
                 Center(
                   child: Text(
                     "Forgot Password for kaala Mandi",
+                    textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                         color: Colors.grey.shade800,
                         fontWeight: FontWeight.w700),

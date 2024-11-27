@@ -10,4 +10,5 @@ class AppPages {
   static const categoryItemView = '/categoryItemView';
   static const offerDetailsView = '/offerDetailsView';
   static const messageScreenView = '/messageScreenView';
+  static const createSellAdView = '/createSellAd';
 }

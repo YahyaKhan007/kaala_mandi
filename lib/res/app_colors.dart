@@ -7,6 +7,7 @@ class AppColors {
   static Color lightGreyColor = Colors.grey.shade300;
   static Color lightBorderColor = Colors.grey.shade300;
   static Color lightIconGreyColor = Colors.grey.shade700;
+  static Color lightWhite = Colors.white;
 
   //   Dark Theme
   static const darkPrimaryColor = Colors.blue;

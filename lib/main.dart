@@ -1,4 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kaala_mandi/res/getx_localization/languages.dart';
@@ -15,8 +17,15 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  FCMService fcmService = FCMService();
-  await fcmService.initialize();
+  if (kIsWeb) {
+    // No need to initialize FCMService for web
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      print("Web: Received notification: ${message.notification}");
+    });
+  } else {
+    FCMService fcmService = FCMService();
+    await fcmService.initialize();
+  }
   runApp(const MyApp());
 }
 

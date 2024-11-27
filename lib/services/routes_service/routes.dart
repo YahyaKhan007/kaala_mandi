@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:kaala_mandi/views/home_screen_views/home_screen_view/home_screen_view.dart';
+import 'package:kaala_mandi/views/home_screen_views/home_screen_view/sub_pages/create_sell_ad/create_sell_ad.dart';
 import 'package:kaala_mandi/views/home_screen_views/home_view/sub_pages/category_items_view/category_item_view.dart';
 import 'package:kaala_mandi/views/home_screen_views/home_view/sub_pages/offer_detail_view/offer_detail_view.dart';
 import 'package:kaala_mandi/views/on_boarding/on_boarding_view.dart';
@@ -48,6 +49,13 @@ class AppRoutes {
             page: () {
               final args = Get.arguments;
               return OTPView(number: args['phoneNumber']);
-            })
+            }),
+
+        GetPage(
+            name: AppPages.createSellAdView,
+            page: () {
+              final args = Get.arguments;
+              return CreateSellAdView(category: args['category']);
+            }),
       ];
 }

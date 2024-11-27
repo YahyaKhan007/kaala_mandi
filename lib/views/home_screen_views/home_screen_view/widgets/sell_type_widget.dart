@@ -6,27 +6,43 @@ class SellTypeWidget extends StatelessWidget {
   final String text;
   final String image;
   final BoxConstraints constraints;
+  final VoidCallback onTap;
   const SellTypeWidget(
       {super.key,
       required this.text,
       required this.image,
-      required this.constraints});
+      required this.constraints,
+      required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        CircleAvatar(
-          radius: constraints.maxHeight * 0.035,
-          backgroundColor: Colors.white38,
-          backgroundImage: AssetImage(image),
-        ),
-        SizedBox(
-          height: constraints.maxHeight * 0.01,
-        ),
-        BodySmallText(text: "Others", textColor: Colors.white)
-      ],
+    return InkWell(
+      onTap: onTap,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.white38,
+            ),
+            height: constraints.maxHeight * 0.1,
+            width: constraints.maxWidth * 0.14,
+
+            child: Image.asset(
+              image,
+              scale: 6,
+            ),
+            // backgroundImage: AssetImage(
+            //   image,
+            // ),
+          ),
+          // SizedBox(
+          //   height: constraints.maxHeight * 0.01,
+          // ),
+          BodySmallText(text: text, textColor: Colors.white)
+        ],
+      ),
     );
   }
 }

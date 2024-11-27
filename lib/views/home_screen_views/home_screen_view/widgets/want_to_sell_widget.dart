@@ -1,13 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kaala_mandi/view_models/home_screen_vm/home_screen_vm.dart';
 
 import '../../../../data/app_images.dart';
 import '../../../../res/app_colors.dart';
 import '../../../../res/widgets/text_widgets.dart';
 import 'sell_type_widget.dart';
 
-wantToSellDialog(BuildContext context) {
+wantToSellDialog(
+    BuildContext context, HomeScreenViewModel homeScreenViewModel) {
   return showCupertinoDialog(
       context: context,
       builder: (builder) => Dialog(
@@ -44,24 +46,34 @@ wantToSellDialog(BuildContext context) {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             SellTypeWidget(
+                              onTap: () {
+                                homeScreenViewModel
+                                    .gotoCreateSellAdView('Buffalo');
+                              },
                               text: 'Buffalo',
-                              image: AppImages.buffalo,
+                              image: AppImages.buffaloIcon,
                               constraints: constraints,
                             ),
                             SizedBox(
                               width: constraints.maxWidth * 0.06,
                             ),
                             SellTypeWidget(
+                              onTap: () {
+                                homeScreenViewModel.gotoCreateSellAdView('Cow');
+                              },
                               text: 'Cow',
-                              image: AppImages.cow,
+                              image: AppImages.cowIcon,
                               constraints: constraints,
                             ),
                             SizedBox(
                               width: constraints.maxWidth * 0.06,
                             ),
                             SellTypeWidget(
+                              onTap: () {
+                                homeScreenViewModel.gotoCreateSellAdView('');
+                              },
                               text: 'Others',
-                              image: AppImages.goatSheep,
+                              image: AppImages.goatIcon,
                               constraints: constraints,
                             )
                           ],
@@ -71,12 +83,17 @@ wantToSellDialog(BuildContext context) {
                         onTap: () {
                           Get.back();
                         },
-                        child: CircleAvatar(
-                          radius: constraints.maxHeight * 0.045,
-                          backgroundColor: Colors.white,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.white38,
+                          ),
+                          height: constraints.maxHeight * 0.1,
+                          width: constraints.maxWidth * 0.14,
                           child: Center(
                             child: Icon(
                               Icons.close,
+                              color: AppColors.lightWhite,
                               size: constraints.maxHeight * 0.045,
                             ),
                           ),

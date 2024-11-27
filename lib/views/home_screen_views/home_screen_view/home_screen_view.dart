@@ -34,7 +34,7 @@ class _HomeScreenViewState extends State<HomeScreenView> {
           floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
           floatingActionButton: InkWell(
             onTap: () {
-              wantToSellDialog(context);
+              wantToSellDialog(context, viewModel);
             },
             child: Container(
               height: 60,

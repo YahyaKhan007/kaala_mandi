@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:googleapis_auth/auth_io.dart' as auth;
 import 'package:http/http.dart' as http;
@@ -33,23 +34,29 @@ class FCMService {
 
   // Initialize FCM and local notifications
   Future<void> initialize() async {
-    // Request notification permission (iOS only)
     await requestPermission();
     await getToken();
 
-    // Initialize local notification settings for Android
-    await flutterLocalNotificationsPlugin
-        .resolvePlatformSpecificImplementation<
-            AndroidFlutterLocalNotificationsPlugin>()
-        ?.createNotificationChannel(channel);
+    if (!kIsWeb) {
+      // Local notifications for mobile
+      await flutterLocalNotificationsPlugin
+          .resolvePlatformSpecificImplementation<
+              AndroidFlutterLocalNotificationsPlugin>()
+          ?.createNotificationChannel(channel);
+      firebaseForegroundMessageHandler();
+    } else {
+      // Web-specific Firebase Messaging configuration
+      FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+        print("Web: Received foreground message: ${message.notification}");
+        // Handle web-specific notification logic if needed
+      });
 
-    // Handle foreground messages
-    firebaseForegroundMessageHandler();
+      // Web background messaging is handled in firebase-messaging-sw.js
+    }
 
-    // Handle background messages
+    // Handle background/terminated messages
     FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
 
-    // Handle notifications when the app is launched from a terminated state
     FirebaseMessaging.instance
         .getInitialMessage()
         .then((RemoteMessage? message) {

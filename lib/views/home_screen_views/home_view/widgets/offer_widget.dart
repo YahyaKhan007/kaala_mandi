@@ -24,11 +24,13 @@ class OfferWidget extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(color: AppColors.lightGreyColor)),
-      child: Row(
-        children: [
-          profilePic(index: index),
-          dataAboutOffer(context),
-        ],
+      child: FittedBox(
+        child: Row(
+          children: [
+            profilePic(index: index),
+            dataAboutOffer(context),
+          ],
+        ),
       ),
     );
   }
